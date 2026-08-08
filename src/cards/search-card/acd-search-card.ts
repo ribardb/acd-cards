@@ -378,7 +378,8 @@ export class AcdSearchCard extends AcdBaseCard<AcdSearchCardConfig> {
       }
     `,
     densityStyles(
-      ".field{height:38px;padding:0 12px}input{font-size:12.5px}"
+      ".field{height:38px;padding:0 12px}input{font-size:12.5px}",
+      ".r-sub{display:none}"
     ),
   ];
 }

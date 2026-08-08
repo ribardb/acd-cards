@@ -292,6 +292,8 @@ npm run typecheck
 
 Architecture : `src/shared/` + `src/cards/<carte>/` (carte + éditeur). Chaque nouvelle carte hérite de `AcdBaseCard` et réutilise les briques partagées.
 
+Avant de créer ou modifier une carte, voir **[DESIGN-SYSTEM.md](DESIGN-SYSTEM.md)** : tokens (couleur, spacing, radius, typo, icônes, motion), anatomie d'une carte/éditeur, conventions d'état et checklist de création.
+
 Briques de `src/shared/` :
 
 | Fichier | Rôle |
