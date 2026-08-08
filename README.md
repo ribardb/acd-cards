@@ -25,7 +25,7 @@ Collection de cartes custom pour Home Assistant au design doux et minimal (crèm
 ### HACS (recommandé)
 
 1. HACS → menu ⋮ → **Dépôts personnalisés**.
-2. Dépôt : `https://github.com/<compte>/acd-cards` — catégorie : **Lovelace**.
+2. Dépôt : `https://github.com/ribardb/acd-cards` — catégorie : **Lovelace**.
 3. Ouvrir « ACD Cards » → **Télécharger**.
 4. Rafraîchir le navigateur (Ctrl+F5).
 
