@@ -1,0 +1,45 @@
+name: Release
+
+# Une release = un tag `vX.Y.Z`. Le job construit le bundle et l'attache à la
+# release : c'est ce fichier que HACS télécharge (voir `filename` dans
+# hacs.json), il n'a donc pas besoin d'être versionné dans le dépôt.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Vérifier que le bundle existe
+        run: test -s dist/acd-cards.js
+
+      - name: Publier la release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/acd-cards.js
+          generate_release_notes: true

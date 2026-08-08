@@ -1,0 +1,17 @@
+# Dépendances
+node_modules/
+
+# Artefacts de build — reconstruits par la CI et attachés aux releases
+dist/
+
+# Fichiers temporaires de Vite
+vite.config.ts.timestamp-*
+*.tsbuildinfo
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Divers
+*.log
+.__wtest

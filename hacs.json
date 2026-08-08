@@ -1,0 +1,6 @@
+{
+  "name": "ACD Cards",
+  "render_readme": true,
+  "filename": "acd-cards.js",
+  "homeassistant": "2024.8.0"
+}
