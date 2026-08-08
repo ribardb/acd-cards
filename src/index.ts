@@ -28,10 +28,20 @@ import "./cards/vacuum-card/acd-vacuum-card";
 import "./cards/vacuum-card/acd-vacuum-card-editor";
 import "./cards/datetime-card/acd-datetime-card";
 import "./cards/datetime-card/acd-datetime-card-editor";
+import "./cards/device-card/acd-device-card";
+import "./cards/device-card/acd-device-card-editor";
+import "./cards/devices-card/acd-devices-card";
+import "./cards/devices-card/acd-devices-card-editor";
+import "./cards/page-header-card/acd-page-header-card";
+import "./cards/page-header-card/acd-page-header-card-editor";
+import "./cards/room-summary-card/acd-room-summary-card";
+import "./cards/room-summary-card/acd-room-summary-card-editor";
+import "./cards/scenes-card/acd-scenes-card";
+import "./cards/scenes-card/acd-scenes-card-editor";
 import "./badges/acd-person-badge";
 import "./badges/acd-person-badge-editor";
 
-const VERSION = "0.16.0";
+const VERSION = "0.17.0";
 
 // eslint-disable-next-line no-console
 console.info(
