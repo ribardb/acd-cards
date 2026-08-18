@@ -26,6 +26,8 @@ import "./cards/chart-card/acd-chart-card";
 import "./cards/chart-card/acd-chart-card-editor";
 import "./cards/vacuum-card/acd-vacuum-card";
 import "./cards/vacuum-card/acd-vacuum-card-editor";
+import "./cards/fan-card/acd-fan-card";
+import "./cards/fan-card/acd-fan-card-editor";
 import "./cards/datetime-card/acd-datetime-card";
 import "./cards/datetime-card/acd-datetime-card-editor";
 import "./cards/device-card/acd-device-card";

@@ -9,6 +9,7 @@ Collection de cartes custom pour Home Assistant au design doux et minimal (crèm
 | Light | `custom:acd-light-card` | Lumière : interrupteur, luminosité, couleur & température (panneau dépliable) |
 | Cover | `custom:acd-cover-card` | Volet / store : boutons, position, carrousel |
 | Climate | `custom:acd-climate-card` | Thermostat : cadran de consigne, modes, température actuelle |
+| Fan | `custom:acd-fan-card` | Ventilateur : interrupteur + niveaux de puissance (pastilles), pas un pourcentage — nombre de niveaux déduit de l'entité |
 | Stat | `custom:acd-stat-card` | Tuile KPI : grande valeur, sparkline 24 h, tendance |
 | Stats Row | `custom:acd-stats-row-card` | Rangée de tuiles KPI en **scroll horizontal** + tendance vs période précédente |
 | Rooms | `custom:acd-rooms-card` | Pièces (areas HA) : liste sur desktop, **pastilles en scroll horizontal** sur mobile |
@@ -94,6 +95,38 @@ entities:                          # optionnel : carrousel ‹ › entre plusieu
 - **Fond de carte** teinté vert-gris quand la lumière est allumée (fidèle à la maquette).
 - Groupes de lumières : l'état secondaire affiche `N appareil(s) · 36%`.
 - Libellés FR/EN automatiques selon la langue de l'utilisateur HA.
+
+## `acd-fan-card`
+
+```yaml
+type: custom:acd-fan-card
+entity: fan.chambre
+```
+
+```yaml
+# Options complètes
+type: custom:acd-fan-card
+entity: fan.chambre
+name: Ventilateur              # optionnel
+icon: mdi:fan                  # optionnel
+levels: 4                      # optionnel : force le nombre de niveaux
+show_toggle: true              # défaut : true
+show_state: true               # défaut : true
+```
+
+- **Pas de pourcentage** : la vitesse se règle par **pastilles de niveau**
+  (1, 2, 3…), pas par curseur `%`. Le nombre de pastilles est déduit de
+  l'attribut `percentage_step` de l'entité (`100 / percentage_step`) — un
+  ventilateur 3 vitesses affiche 3 pastilles, un modèle 6 vitesses en
+  affiche 6, sans configuration spécifique par marque. `levels` permet de
+  forcer ce nombre si l'entité ne l'expose pas correctement.
+- Une pastille appelle `fan.set_percentage` avec le pourcentage correspondant
+  à son niveau — fonctionne avec n'importe quelle intégration `fan` standard.
+- Pour les ventilateurs **sans réglage de vitesse mais avec des préréglages**
+  (`preset_modes`, ex. « Nuit », « Naturel »), les pastilles affichent ces
+  préréglages à la place et appellent `fan.set_preset_mode`.
+- Ventilateur simple marche/arrêt (aucune des deux fonctionnalités) : la
+  carte n'affiche que l'interrupteur.
 
 ## Mobile : scroll horizontal et bascule automatique
 

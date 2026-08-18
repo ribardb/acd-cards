@@ -379,6 +379,18 @@ export interface AcdVacuumCardConfig extends LovelaceCardConfig {
   show_state?: boolean;
 }
 
+export interface AcdFanCardConfig extends LovelaceCardConfig {
+  entity: string;
+  name?: string;
+  icon?: string;
+  /** Number of power levels shown as pills. Auto-detected from the entity's
+   *  `percentage_step` attribute when unset — works with any fan regardless
+   *  of how many real speeds it supports. */
+  levels?: number;
+  show_toggle?: boolean;
+  show_state?: boolean;
+}
+
 export interface AcdDeviceCardConfig extends LovelaceCardConfig {
   entity: string;
   name?: string;
