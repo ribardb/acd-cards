@@ -1,6 +1,6 @@
 {
   "name": "acd-cards",
-  "version": "0.17.1",
+  "version": "0.18.0",
   "description": "ACD Cards — a soft, minimal card collection for Home Assistant dashboards",
   "type": "module",
   "scripts": {
